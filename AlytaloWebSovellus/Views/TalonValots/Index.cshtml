@@ -1,0 +1,57 @@
+﻿@model IEnumerable<AlytaloWebSovellus.TalonValot>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Huone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValaisinTyyppi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LampunId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValonMaara)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PaivaMaara)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Huone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValaisinTyyppi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LampunId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValonMaara)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PaivaMaara)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ValonTilaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ValonTilaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ValonTilaId })
+        </td>
+    </tr>
+}
+
+</table>

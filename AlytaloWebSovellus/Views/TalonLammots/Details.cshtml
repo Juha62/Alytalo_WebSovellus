@@ -1,0 +1,50 @@
+﻿@model AlytaloWebSovellus.TalonLammot
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TalonLammot</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Huone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Huone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TavoiteLampotila)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TavoiteLampotila)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TalonNykyLampotila)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TalonNykyLampotila)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaivaMaara)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaivaMaara)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.HuoneId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

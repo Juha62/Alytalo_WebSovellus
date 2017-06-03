@@ -1,0 +1,51 @@
+﻿@model IEnumerable<AlytaloWebSovellus.TalonLammot>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Huone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TavoiteLampotila)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TalonNykyLampotila)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PaivaMaara)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Huone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TavoiteLampotila)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TalonNykyLampotila)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PaivaMaara)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.HuoneId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.HuoneId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.HuoneId })
+        </td>
+    </tr>
+}
+
+</table>
