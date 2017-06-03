@@ -186,13 +186,10 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\Lights.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\Sauna.cs" />
     <Compile Include="Controllers\TalonLammotsController.cs" />
     <Compile Include="Controllers\TalonSaunatsController.cs" />
     <Compile Include="Controllers\TalonValotsController.cs" />
-    <Compile Include="Controllers\Thermostat.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
