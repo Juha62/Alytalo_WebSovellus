@@ -10,17 +10,54 @@
 
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h4>Talon valon tiedot</h4>
-        <a href="/TalonValots" class="btn btn-default">Valot</a>
+
+@* Valojen asetukset *@
+
+<div class="btn group btn-group-vertical btn-lg">
+
+        <h4>Talon valot</h4>
+        <a href="/TalonValots" class="btn btn-default">Valot tietokantaan</a>
+
+        <div id="Valot">
+        <div id="Valot1"></div>
+        <div id="Valot2"></div>
+        <div id="Valot3"></div>
+        <div id="Valot4"></div>
+        <div id="Valot5"></div>
     </div>
-    <div class="col-md-4">
-        <h4>Talon saunan tiedot</h4>
-        <a href="/TalonSaunats" class="btn btn-default">Sauna</a>
+
+    <button onclick="Move" class="btn btn-default" style="width:140px;">Himmeä</button>
+    <button onclick="Move2" class="btn btn-default" style="width:140px;">Normaali</button>
+    <button onclick="Move3" class="btn btn-default" style="width:140px;">Kirkas</button>
+    <button onclick="Move4" class="btn btn-default" style="width:140px;">Off</button>   
     </div>
-    <div class="col-md-4">
-        <h4>Talon lämmmön tiedot</h4>
-        <a href="/TalonLammots" class="btn btn-default">Lämpö</a>
+
+
+@* Saunan asetukset *@
+
+<div class="btn group btn-group-vertical btn-lg">
+  
+        <h4>Talon saunat</h4>
+        <a href="/TalonSaunats" class="btn btn-default" style="width:140px;">Sauna tietokantaan</a>
+   
+    <button onclick="StartCount()" class="btn btn-default" style="width:140px;">Sauna On</button>
+    <button onclick="StopCount()" class="btn btn-default" style="width:140px;">Sauna Off</button>
+    
+
+    <input type="text" id="Saunan lämpötila" style="width:50px;"> &deg;C
+    <input type="text" id="Saunan tavoite lämpötila" style="width:50px;" value="83"> &deg;C
     </div>
+
+@* Lämmön asetukset *@
+
+<div class="btn group btn-group-vertical btn-lg">
+   
+        <h4>Talon lämmmöt</h4>
+        <a href="/TalonLammots" class="btn btn-default" style="width:140px;">Lämpö tietokantaan</a>
+  
+
+    <button onclick="StarWarming()" class="btn btn-default" style="width:140px;">Huone</button>
+
+    <input type="text" id="Huoneen lämpötila" style="width:50px;"> &deg;C
+    <input type="text" id="Huoneen tavoite lämpötila" style="width:50px;" value="20"> &deg;C
 </div>
