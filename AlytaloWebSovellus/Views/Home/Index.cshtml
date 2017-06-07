@@ -61,3 +61,217 @@
     <input type="text" id="Huoneen lämpötila" style="width:50px;"> &deg;C
     <input type="text" id="Huoneen tavoite lämpötila" style="width:50px;" value="20"> &deg;C
 </div>
+
+<script>
+
+    // Valaistuksen asetuksia
+
+    function move() {
+        var elem = documentById(Valot);
+        var width = 0;
+        var id = setInterval(frame, 10);
+        function frame() {
+
+            if (width == 100) {
+                clearInterval(id);
+            }
+            else {
+                 width++;
+                 ele.style.width = width + "%";
+
+            }
+            function move1() {
+                var elem = documentById(Valot1);
+                var width = 0;
+                var id = setInterval(frame, 10);
+                function frame() {
+
+                    if (width == 100) {
+                        clearInterval(id);
+            }
+             else {
+                   width++;
+                   ele.style.width = width + "%";
+
+            }
+             function move2() {
+                 var elem = documentById(Valot2);
+                 var width = 0;
+                 var id = setInterval(frame, 10);
+                 function frame() {
+
+                     if (width == 100) {
+                         clearInterval(id);
+                     }
+                     else {
+                         width++;
+                         ele.style.width = width + "%";
+
+              }
+               function move3() {
+                                var elem = documentById(Valot3);
+                                var width = 0;
+                                var id = setInterval(frame, 10);
+                                function frame() {
+                                    if (width == 100) {
+                                        clearInterval(id);
+                                    }
+                                    else {
+                                        width++;
+                                        ele.style.width = width + "%";
+                                    }
+                                    function move4() {
+                                        var elem = documentById(Valot4);
+                                        var width = 0;
+                                        var id = setInterval(frame, 10);
+                                        function frame() {
+                                            if (width == 100) {
+                                                clearInterval(id);
+                                            }
+                                            else {
+                                                width++;
+                                                ele.style.width = width + "%";
+                                            }
+                                        }
+                                        function move5() {
+                                            var elem = documentById(Valot5);
+                                            var width = 0;
+                                            var id = setInterval(frame, 10);
+                                            function frame() {
+                                                if (width == 100) {
+                                                    clearInterval(id);
+                                                }
+                                                else {
+                                                    width++;
+                                                    ele.style.width = width + "%";
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    // Kellon asetus
+
+
+    var kelloVar = setInterval(function () {
+        kelloTimer()
+    },
+  1000);
+    function kelloTimer ();
+        var d = new Date();
+        var t =d.toLocaleTimeString();
+        document.getElementById("Time").innerHTML=t;
+    }
+
+
+    // Saunan asetukset
+
+    var ce=20;
+    var ti;
+    var timer_is_on =0;
+    var i=0;
+
+    function timedCount(){
+        document.getElementById("Sauna lämpötila").value=ce;
+        ce=ce+1;
+        ti=setTimeout(function(){
+            timedCount()},
+            15000);
+    }
+    function startCount(){
+        if (timer_is_on){
+            timer_is_on =20;
+            timedCount();
+
+        }
+        function stopCount(){
+            clearTimeout(ti);
+            timer_is_on=0;
+
+        }
+    }
+    
+
+    // Talon lämmitys
+
+
+    var c=15;
+    var t;
+    var timer_is_on=0;
+
+    function timedWarm(){
+        document.getElementById("Huone lämpötila").value=c;
+
+        c=c+1;
+        t=setTimeout(function()
+        {
+            timedWarm()
+        }, 15000);
+    }
+    function startWarm(){
+
+    }
+    if (timer_is_on);{
+        timer_is_on=15;
+        timedWarm();
+    }
+    
+    function timedWarm1(){
+        document.getElementById("Huone lämpötila1").value=c;
+
+        c=c+1;
+        t=setTimeout(function()
+        {
+            timedWarm1()
+        }, 15000);
+    }
+    function startWarm(){
+
+    }
+    if (timer_is_on);{
+        timer_is_on=15;
+        timedWarm1();
+    }
+
+    function timedWarm2(){
+        document.getElementById("Huone lämpötila2").value=c;
+
+        c=c+1;
+        t=setTimeout(function()
+        {
+            timedWarm2()
+        }, 15000);
+    }
+    function startWarm(){
+
+    }
+    if (timer_is_on);{
+        timer_is_on=15;
+        timedWarm2();
+    }
+
+    function timedWarm3(){
+        document.getElementById("Huone lämpötila3").value=c;
+
+        c=c+1;
+        t=setTimeout(function()
+        {
+            timedWarm3()
+        }, 15000);
+    }
+    function startWarm(){
+
+    }
+    if (timer_is_on);{
+        timer_is_on=15;
+        timedWarm3();
+    }
+</script>
