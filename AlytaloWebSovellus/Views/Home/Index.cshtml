@@ -165,7 +165,9 @@
         kelloTimer()
     },
   1000);
-    function kelloTimer ();
+    function kelloTimer ()
+    {
+
         var d = new Date();
         var t =d.toLocaleTimeString();
         document.getElementById("Time").innerHTML=t;
@@ -180,19 +182,19 @@
     var i=0;
 
     function timedCount(){
-        document.getElementById("Sauna lämpötila").value=ce;
+        document.getElementById("Saunan tavoite lämpötila").value=ce;
         ce=ce+1;
         ti=setTimeout(function(){
             timedCount()},
             15000);
     }
-    function startCount(){
+    function StartCount(){
         if (timer_is_on){
             timer_is_on =20;
             timedCount();
 
         }
-        function stopCount(){
+        function StopCount(){
             clearTimeout(ti);
             timer_is_on=0;
 
@@ -208,7 +210,7 @@
     var timer_is_on=0;
 
     function timedWarm(){
-        document.getElementById("Huone lämpötila").value=c;
+        document.getElementById("Huoneen tavoite lämpötila").value=c;
 
         c=c+1;
         t=setTimeout(function()
@@ -216,7 +218,7 @@
             timedWarm()
         }, 15000);
     }
-    function startWarm(){
+    function StartWarming(){
 
     }
     if (timer_is_on);{
