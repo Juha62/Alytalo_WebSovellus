@@ -40,12 +40,12 @@
         <h4>Talon saunat</h4>
         <a href="/TalonSaunats" class="btn btn-default" style="width:140px;">Sauna tietokantaan</a>
    
-    <button onclick="StartCount()" class="btn btn-default" style="width:140px;">Sauna On</button>
+    <button onclick="StartCount()" class="btn btn-default" style="width:140px;">Sauna On</button> 
     <button onclick="StopCount()" class="btn btn-default" style="width:140px;">Sauna Off</button>
     
 
     <input type="text" id="Saunan lämpötila" style="width:50px;"> &deg;C
-    <input type="text" id="Saunan tavoite lämpötila" style="width:50px;" value="83"> &deg;C
+    <input type="text" id="Saunan tavoite lämpötila" style="width:50px;" value="85"> &deg;C
     </div>
 
 @* Lämmön asetukset *@
@@ -57,7 +57,18 @@
   
 
     <button onclick="StarWarming()" class="btn btn-default" style="width:140px;">Huone</button>
+    <input type="text" id="Huoneen lämpötila" style="width:50px;"> &deg;C
+    <input type="text" id="Huoneen tavoite lämpötila" style="width:50px;" value="20"> &deg;C
 
+    <button onclick="StarWarming()" class="btn btn-default" style="width:140px;">Huone1</button>
+    <input type="text" id="Huoneen lämpötila" style="width:50px;"> &deg;C
+    <input type="text" id="Huoneen tavoite lämpötila" style="width:50px;" value="20"> &deg;C
+
+    <button onclick="StarWarming()" class="btn btn-default" style="width:140px;">Huone2</button>
+    <input type="text" id="Huoneen lämpötila" style="width:50px;"> &deg;C
+    <input type="text" id="Huoneen tavoite lämpötila" style="width:50px;" value="20"> &deg;C
+
+    <button onclick="StarWarming()" class="btn btn-default" style="width:140px;">Huone3</button>
     <input type="text" id="Huoneen lämpötila" style="width:50px;"> &deg;C
     <input type="text" id="Huoneen tavoite lämpötila" style="width:50px;" value="20"> &deg;C
 </div>
@@ -205,7 +216,7 @@
     // Talon lämmitys
 
 
-    var c=15;
+    var c=19;
     var t;
     var timer_is_on=0;
 
@@ -222,7 +233,7 @@
 
     }
     if (timer_is_on);{
-        timer_is_on=15;
+        timer_is_on=19;
         timedWarm();
     }
     
@@ -235,11 +246,11 @@
             timedWarm1()
         }, 15000);
     }
-    function startWarm(){
+    function StartWarming(){
 
     }
     if (timer_is_on);{
-        timer_is_on=15;
+        timer_is_on=19;
         timedWarm1();
     }
 
@@ -252,11 +263,11 @@
             timedWarm2()
         }, 15000);
     }
-    function startWarm(){
+    function StartWarming(){
 
     }
     if (timer_is_on);{
-        timer_is_on=15;
+        timer_is_on=19;
         timedWarm2();
     }
 
@@ -269,11 +280,11 @@
             timedWarm3()
         }, 15000);
     }
-    function startWarm(){
+    function StartWarming(){
 
     }
     if (timer_is_on);{
-        timer_is_on=15;
+        timer_is_on=19;
         timedWarm3();
     }
 </script>
