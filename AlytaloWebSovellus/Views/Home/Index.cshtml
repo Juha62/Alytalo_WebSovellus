@@ -20,20 +20,50 @@
         <h4>Talon valot</h4>
         <a href="/TalonValots" class="btn btn-default">Valot tietokantaan</a>
 
-        <div id="Valot">
-        <div id="Valot1"></div>
-        <div id="Valot2"></div>
-        <div id="Valot3"></div>
-        <div id="Valot4"></div>
-        <div id="Valot5"></div>
-    </div>
+ 
+<label for=Huone1></label><br />
+<input id=Huone1 type="range" min=1 max=100 step=0.001 value=10
+       onchange="if(this.type=='range')
+       {
+       document.getElementById('Valon määrä1').textContent = this.value
+       }" >
+<span id="Valon määrä1">10</span>
 
-    <button onclick="Move" class="btn btn-default" style="width:140px;">Himmeä</button>
-    <button onclick="Move2" class="btn btn-default" style="width:140px;">Normaali</button>
-    <button onclick="Move3" class="btn btn-default" style="width:140px;">Kirkas</button>
-    <button onclick="Move4" class="btn btn-default" style="width:140px;">Off</button>   
-    </div>
 
+
+
+<label for=Huone2></label><br />
+<input id=Huone2 type="range" min=1 max=100 step=0.001 value=10
+       onchange="if(this.type=='range')
+       {
+       document.getElementById('Valon määrä2').textContent = this.value
+       }">
+<span id="Valon määrä2">10</span>
+
+
+
+
+<label for=Huone3></label><br />
+<input id=Huone3 type="range" min=1 max=100 step=0.001 value=10
+       onchange="if(this.type=='range')
+       {
+       document.getElementById('Valon määrä3').textContent = this.value
+       }">
+<span id="Valon määrä3">10</span>
+
+
+
+
+<label for=Huone4></label><br />
+<input id=Huone4 type="range" min=1 max=100 step=0.001 value=10
+       onchange="if(this.type=='range')
+       {
+       document.getElementById('Valon määrä4').textContent = this.value
+       }">
+<span id="Valon määrä4">10</span>
+
+
+  
 
 @* Sauna *@
 
@@ -80,110 +110,7 @@
 <script>
     // Valaistus
 
-    function move() {
-        var elem = documentById(Valot);
-        var width = 0;
-        var id = setInterval(frame, 10);
-        function frame() {
-
-            if (width == 100) {
-                clearInterval(id);
-            }
-            else {
-                 width++;
-                 ele.style.width = width + "%";
-
-            }
-
-    function move1() {
-        var elem = documentById(Valot1);
-        var width = 0;
-        var id = setInterval(frame, 10);
-        function frame() {
-
-            if (width == 100) {
-                clearInterval(id);
-            }
-             else {
-                   width++;
-                   ele.style.width = width + "%";
-
-            }
-
-    function move2() {
-         var elem = documentById(Valot2);
-         var width = 0;
-         var id = setInterval(frame, 10);
-         function frame() {
-
-             if (width == 100) {
-                         clearInterval(id);
-                     }
-             else {
-                    width++;
-                    ele.style.width = width + "%";
-
-             }
-
-    function move3() {
-         var elem = documentById(Valot3);
-         var width = 0;
-         var id = setInterval(frame, 10);
-         function frame() {
-
-              if (width == 100) {
-                      clearInterval(id);
-                                    }
-              else {
-                  width++;
-                  ele.style.width = width + "%";
-              }
-
-
-
-       function move4() {
-          var elem = documentById(Valot4);
-          var width = 0;
-          var id = setInterval(frame, 10);
-          function frame() {
-
-              if (width == 100) {
-                 clearInterval(id);
-                                            }
-
-              else {
-                  width++;
-                  ele.style.width = width + "%";
-                                            }
-          }
-
-
-     function move5() {
-         var elem = documentById(Valot5);
-         var width = 0;
-         var id = setInterval(frame, 10);
-         function frame() {
-
-             if (width == 100) {
-                clearInterval(id);
-             }
-
-
-             else {
-                  width++;
-                  ele.style.width = width + "%";
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
+   // tähän tulee valaistuksen asetuksia...........
 
 
 
@@ -193,10 +120,10 @@
     var ce=20;
     var ti;
     var timer_is_on=0;
-    var i = 0;
+   
 
     function timedCount(){
-        document.getElementById("Saunan lämpötila").value=ce;
+        document.getElementById("Saunan tavoite lämpötila").value=ce;
         ce=ce+1;
         ti=setTimeout(function(){
             timedCount()},
@@ -207,10 +134,10 @@
             timer_is_on=20;
             timedCount();
 
-        }
-        function StopCount(){
-            clearTimeout(ti);
-            timer_is_on=0;
+   }
+   function StopCount(){
+       clearTimeout(ti);
+       timer_is_on=0;
 
         }
     }
@@ -218,7 +145,7 @@
 
     // Lämmitys
 
-    var c=19;
+    var c=15;
     var t;
     var timer_is_on=0;
 
@@ -292,7 +219,7 @@
 
 
 
-    // Kello
+    // Kello, joka ei toimi..........
 
     var myVar = setInterval(function () {
         myTimer()
