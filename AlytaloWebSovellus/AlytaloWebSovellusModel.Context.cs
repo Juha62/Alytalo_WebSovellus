@@ -26,7 +26,7 @@ namespace AlytaloWebSovellus
         }
     
         public virtual DbSet<TalonLammot> TalonLammots { get; set; }
-        public virtual DbSet<TalonSaunat> TalonSaunats { get; set; }
         public virtual DbSet<TalonValot> TalonValots { get; set; }
+        public virtual DbSet<TalonSaunat> TalonSaunats { get; set; }
     }
 }

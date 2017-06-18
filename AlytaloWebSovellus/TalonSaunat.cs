@@ -17,8 +17,8 @@ namespace AlytaloWebSovellus
         public int SaunaId { get; set; }
         public string SaunaTavoiteLampotila { get; set; }
         public string SaunaNykyLampotila { get; set; }
-        public int SaunanTila { get; set; }
         public string SaunanNimi { get; set; }
         public System.DateTime PaivaMaara { get; set; }
+        public string SaunanTila { get; set; }
     }
 }

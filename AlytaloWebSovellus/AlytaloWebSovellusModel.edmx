@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="AlytaloModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="AlytaloModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="TalonLammot">
           <Key>
             <PropertyRef Name="HuoneId" />
@@ -22,9 +22,9 @@
           <Property Name="SaunaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SaunaTavoiteLampotila" Type="varchar" MaxLength="50" />
           <Property Name="SaunaNykyLampotila" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="SaunanTila" Type="int" Nullable="false" />
           <Property Name="SaunanNimi" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="PaivaMaara" Type="datetime" Nullable="false" />
+          <Property Name="SaunanTila" Type="varchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="TalonValot">
           <Key>
@@ -42,8 +42,7 @@
           <EntitySet Name="TalonSaunat" EntityType="Self.TalonSaunat" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TalonValot" EntityType="Self.TalonValot" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AlytaloModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -55,17 +54,6 @@
           <Property Name="Huone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TavoiteLampotila" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TalonNykyLampotila" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="PaivaMaara" Type="DateTime" Nullable="false" Precision="3" />
-        </EntityType>
-        <EntityType Name="TalonSaunat">
-          <Key>
-            <PropertyRef Name="SaunaId" />
-          </Key>
-          <Property Name="SaunaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SaunaTavoiteLampotila" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="SaunaNykyLampotila" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="SaunanTila" Type="Int32" Nullable="false" />
-          <Property Name="SaunanNimi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="PaivaMaara" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="TalonValot">
@@ -81,9 +69,20 @@
         </EntityType>
         <EntityContainer Name="AlytaloEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TalonLammots" EntityType="Self.TalonLammot" />
-          <EntitySet Name="TalonSaunats" EntityType="Self.TalonSaunat" />
           <EntitySet Name="TalonValots" EntityType="Self.TalonValot" />
+          <EntitySet Name="TalonSaunats" EntityType="AlytaloModel.TalonSaunat" />
         </EntityContainer>
+        <EntityType Name="TalonSaunat">
+          <Key>
+            <PropertyRef Name="SaunaId" />
+          </Key>
+          <Property Name="SaunaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SaunaTavoiteLampotila" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SaunaNykyLampotila" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SaunanNimi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PaivaMaara" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SaunanTila" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -101,18 +100,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TalonSaunats">
-            <EntityTypeMapping TypeName="AlytaloModel.TalonSaunat">
-              <MappingFragment StoreEntitySet="TalonSaunat">
-                <ScalarProperty Name="SaunaId" ColumnName="SaunaId" />
-                <ScalarProperty Name="SaunaTavoiteLampotila" ColumnName="SaunaTavoiteLampotila" />
-                <ScalarProperty Name="SaunaNykyLampotila" ColumnName="SaunaNykyLampotila" />
-                <ScalarProperty Name="SaunanTila" ColumnName="SaunanTila" />
-                <ScalarProperty Name="SaunanNimi" ColumnName="SaunanNimi" />
-                <ScalarProperty Name="PaivaMaara" ColumnName="PaivaMaara" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TalonValots">
             <EntityTypeMapping TypeName="AlytaloModel.TalonValot">
               <MappingFragment StoreEntitySet="TalonValot">
@@ -122,6 +109,18 @@
                 <ScalarProperty Name="ValonTilaId" ColumnName="ValonTilaId" />
                 <ScalarProperty Name="ValonMaara" ColumnName="ValonMaara" />
                 <ScalarProperty Name="PaivaMaara" ColumnName="PaivaMaara" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TalonSaunats">
+            <EntityTypeMapping TypeName="AlytaloModel.TalonSaunat">
+              <MappingFragment StoreEntitySet="TalonSaunat">
+                <ScalarProperty Name="SaunanTila" ColumnName="SaunanTila" />
+                <ScalarProperty Name="PaivaMaara" ColumnName="PaivaMaara" />
+                <ScalarProperty Name="SaunanNimi" ColumnName="SaunanNimi" />
+                <ScalarProperty Name="SaunaNykyLampotila" ColumnName="SaunaNykyLampotila" />
+                <ScalarProperty Name="SaunaTavoiteLampotila" ColumnName="SaunaTavoiteLampotila" />
+                <ScalarProperty Name="SaunaId" ColumnName="SaunaId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

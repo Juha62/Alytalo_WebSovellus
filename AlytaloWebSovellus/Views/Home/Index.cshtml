@@ -7,11 +7,13 @@
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/Site.css" rel="stylesheet" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
-
+    <script src="~/Scripts/bootstrap.js"></script>
+    
+    
 </div>
 
 
-@* Valojen asetukset *@
+@* Valaistus *@
 
 <div class="btn group btn-group-vertical btn-lg">
 
@@ -33,7 +35,7 @@
     </div>
 
 
-@* Saunan asetukset *@
+@* Sauna *@
 
 <div class="btn group btn-group-vertical btn-lg">
   
@@ -45,10 +47,10 @@
     
 
     <input type="text" id="Saunan lämpötila" style="width:50px;"> &deg;C
-    <input type="text" id="Saunan tavoite lämpötila" style="width:50px;" value="85"> &deg;C
+    <input type="text" id="Saunan tavoite lämpötila" style="width:50px;" value="80"> &deg;C
     </div>
 
-@* Lämmön asetukset *@
+@* Lämpö *@
 
 <div class="btn group btn-group-vertical btn-lg">
    
@@ -56,26 +58,27 @@
         <a href="/TalonLammots" class="btn btn-default" style="width:140px;">Lämpö tietokantaan</a>
   
 
-    <button onclick="StarWarming()" class="btn btn-default" style="width:140px;">Huone</button>
+    <button onclick="StartWarm()" class="btn btn-default" style="width:140px;">Huone</button>
     <input type="text" id="Huoneen lämpötila" style="width:50px;"> &deg;C
     <input type="text" id="Huoneen tavoite lämpötila" style="width:50px;" value="20"> &deg;C
 
-    <button onclick="StarWarming()" class="btn btn-default" style="width:140px;">Huone1</button>
-    <input type="text" id="Huoneen lämpötila" style="width:50px;"> &deg;C
-    <input type="text" id="Huoneen tavoite lämpötila" style="width:50px;" value="20"> &deg;C
+    <button onclick="StartWarm()" class="btn btn-default" style="width:140px;">Huone1</button>
+    <input type="text" id="Huoneen lämpötila1" style="width:50px;"> &deg;C
+    <input type="text" id="Huoneen tavoite lämpötila1" style="width:50px;" value="20"> &deg;C
 
-    <button onclick="StarWarming()" class="btn btn-default" style="width:140px;">Huone2</button>
-    <input type="text" id="Huoneen lämpötila" style="width:50px;"> &deg;C
-    <input type="text" id="Huoneen tavoite lämpötila" style="width:50px;" value="20"> &deg;C
+    <button onclick="StartWarm()" class="btn btn-default" style="width:140px;">Huone2</button>
+    <input type="text" id="Huoneen lämpötila2" style="width:50px;"> &deg;C
+    <input type="text" id="Huoneen tavoite lämpötila2" style="width:50px;" value="20"> &deg;C
 
-    <button onclick="StarWarming()" class="btn btn-default" style="width:140px;">Huone3</button>
-    <input type="text" id="Huoneen lämpötila" style="width:50px;"> &deg;C
-    <input type="text" id="Huoneen tavoite lämpötila" style="width:50px;" value="20"> &deg;C
+    <button onclick="StartWarm()" class="btn btn-default" style="width:140px;">Huone3</button>
+    <input type="text" id="Huoneen lämpötila3" style="width:50px;"> &deg;C
+    <input type="text" id="Huoneen tavoite lämpötila3" style="width:50px;" value="20"> &deg;C
+
 </div>
 
-<script>
 
-    // Valaistuksen asetuksia
+<script>
+    // Valaistus
 
     function move() {
         var elem = documentById(Valot);
@@ -91,70 +94,84 @@
                  ele.style.width = width + "%";
 
             }
-            function move1() {
-                var elem = documentById(Valot1);
-                var width = 0;
-                var id = setInterval(frame, 10);
-                function frame() {
 
-                    if (width == 100) {
-                        clearInterval(id);
+    function move1() {
+        var elem = documentById(Valot1);
+        var width = 0;
+        var id = setInterval(frame, 10);
+        function frame() {
+
+            if (width == 100) {
+                clearInterval(id);
             }
              else {
                    width++;
                    ele.style.width = width + "%";
 
             }
-             function move2() {
-                 var elem = documentById(Valot2);
-                 var width = 0;
-                 var id = setInterval(frame, 10);
-                 function frame() {
 
-                     if (width == 100) {
+    function move2() {
+         var elem = documentById(Valot2);
+         var width = 0;
+         var id = setInterval(frame, 10);
+         function frame() {
+
+             if (width == 100) {
                          clearInterval(id);
                      }
-                     else {
-                         width++;
-                         ele.style.width = width + "%";
+             else {
+                    width++;
+                    ele.style.width = width + "%";
 
+             }
+
+    function move3() {
+         var elem = documentById(Valot3);
+         var width = 0;
+         var id = setInterval(frame, 10);
+         function frame() {
+
+              if (width == 100) {
+                      clearInterval(id);
+                                    }
+              else {
+                  width++;
+                  ele.style.width = width + "%";
               }
-               function move3() {
-                                var elem = documentById(Valot3);
-                                var width = 0;
-                                var id = setInterval(frame, 10);
-                                function frame() {
-                                    if (width == 100) {
-                                        clearInterval(id);
-                                    }
-                                    else {
-                                        width++;
-                                        ele.style.width = width + "%";
-                                    }
-                                    function move4() {
-                                        var elem = documentById(Valot4);
-                                        var width = 0;
-                                        var id = setInterval(frame, 10);
-                                        function frame() {
-                                            if (width == 100) {
-                                                clearInterval(id);
+
+
+
+       function move4() {
+          var elem = documentById(Valot4);
+          var width = 0;
+          var id = setInterval(frame, 10);
+          function frame() {
+
+              if (width == 100) {
+                 clearInterval(id);
                                             }
-                                            else {
-                                                width++;
-                                                ele.style.width = width + "%";
+
+              else {
+                  width++;
+                  ele.style.width = width + "%";
                                             }
-                                        }
-                                        function move5() {
-                                            var elem = documentById(Valot5);
-                                            var width = 0;
-                                            var id = setInterval(frame, 10);
-                                            function frame() {
-                                                if (width == 100) {
-                                                    clearInterval(id);
-                                                }
-                                                else {
-                                                    width++;
-                                                    ele.style.width = width + "%";
+          }
+
+
+     function move5() {
+         var elem = documentById(Valot5);
+         var width = 0;
+         var id = setInterval(frame, 10);
+         function frame() {
+
+             if (width == 100) {
+                clearInterval(id);
+             }
+
+
+             else {
+                  width++;
+                  ele.style.width = width + "%";
                                                 }
                                             }
                                         }
@@ -169,31 +186,17 @@
     }
 
 
-    // Kellon asetus
 
 
-    var kelloVar = setInterval(function () {
-        kelloTimer()
-    },
-  1000);
-    function kelloTimer ()
-    {
-
-        var d = new Date();
-        var t =d.toLocaleTimeString();
-        document.getElementById("Time").innerHTML=t;
-    }
-
-
-    // Saunan asetukset
+    // Sauna
 
     var ce=20;
     var ti;
-    var timer_is_on =0;
-    var i=0;
+    var timer_is_on=0;
+    var i = 0;
 
     function timedCount(){
-        document.getElementById("Saunan tavoite lämpötila").value=ce;
+        document.getElementById("Saunan lämpötila").value=ce;
         ce=ce+1;
         ti=setTimeout(function(){
             timedCount()},
@@ -201,7 +204,7 @@
     }
     function StartCount(){
         if (timer_is_on){
-            timer_is_on =20;
+            timer_is_on=20;
             timedCount();
 
         }
@@ -211,10 +214,9 @@
 
         }
     }
-    
 
-    // Talon lämmitys
 
+    // Lämmitys
 
     var c=19;
     var t;
@@ -229,62 +231,80 @@
             timedWarm()
         }, 15000);
     }
-    function StartWarming(){
+    function StartWarm(){
 
     }
     if (timer_is_on);{
-        timer_is_on=19;
+        timer_is_on=0;
         timedWarm();
     }
-    
-    function timedWarm1(){
-        document.getElementById("Huone lämpötila1").value=c;
+
+    function timedWarm(){
+        document.getElementById("Huoneen tavoite lämpötila1").value=c;
 
         c=c+1;
         t=setTimeout(function()
         {
-            timedWarm1()
+            timedWarm()
         }, 15000);
     }
-    function StartWarming(){
+    function StartWarm(){
 
     }
     if (timer_is_on);{
-        timer_is_on=19;
-        timedWarm1();
+        timer_is_on=0;
+        timedWarm();
     }
 
-    function timedWarm2(){
-        document.getElementById("Huone lämpötila2").value=c;
+    function timedWarm(){
+        document.getElementById("Huoneen tavoite lämpötila2").value=c;
 
         c=c+1;
         t=setTimeout(function()
         {
-            timedWarm2()
+            timedWarm()
         }, 15000);
     }
-    function StartWarming(){
+    function StartWarm(){
 
     }
     if (timer_is_on);{
-        timer_is_on=19;
-        timedWarm2();
+        timer_is_on=0;
+        timedWarm();
     }
 
-    function timedWarm3(){
-        document.getElementById("Huone lämpötila3").value=c;
+    function timedWarm(){
+        document.getElementById("Huoneen tavoite lämpötila3").value=c;
 
         c=c+1;
         t=setTimeout(function()
         {
-            timedWarm3()
+            timedWarm()
         }, 15000);
     }
-    function StartWarming(){
+    function StartWarm(){
 
     }
     if (timer_is_on);{
-        timer_is_on=19;
-        timedWarm3();
+        timer_is_on=0;
+        timedWarm();
     }
+
+
+
+    // Kello
+
+    var myVar = setInterval(function () {
+        myTimer()
+    },
+  1000);
+    function myTimer() {
+
+        var d = new date();
+        var t = d.toLocaleTimeString();
+        document.getElementById("time").innerHTML = t;
+    }
+
+   
+ 
 </script>
