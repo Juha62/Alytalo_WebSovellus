@@ -6,28 +6,28 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using AlytaloWebSovellus;
+using AlytaloWebSovellus.Models;
 
 namespace AlytaloWebSovellus.Controllers
 {
     public class TalonValotsController : Controller
     {
-        private AlytaloEntities db = new AlytaloEntities();
+        private JuhaDBEntities1 db = new JuhaDBEntities1();
 
         // GET: TalonValots
         public ActionResult Index()
         {
-            return View(db.TalonValots.ToList());
+            return View(db.TalonValot.ToList());
         }
 
         // GET: TalonValots/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TalonValot talonValot = db.TalonValots.Find(id);
+            TalonValot talonValot = db.TalonValot.Find(id);
             if (talonValot == null)
             {
                 return HttpNotFound();
@@ -46,11 +46,11 @@ namespace AlytaloWebSovellus.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Huone,ValaisinTyyppi,LampunId,ValonTilaId,ValonMaara,PaivaMaara")] TalonValot talonValot)
+        public ActionResult Create([Bind(Include = "Huone,ValaisinTyyppi,ValonTilaId,ValonMaara,PaivaMaara,LampunId")] TalonValot talonValot)
         {
             if (ModelState.IsValid)
             {
-                db.TalonValots.Add(talonValot);
+                db.TalonValot.Add(talonValot);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -59,13 +59,13 @@ namespace AlytaloWebSovellus.Controllers
         }
 
         // GET: TalonValots/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TalonValot talonValot = db.TalonValots.Find(id);
+            TalonValot talonValot = db.TalonValot.Find(id);
             if (talonValot == null)
             {
                 return HttpNotFound();
@@ -78,7 +78,7 @@ namespace AlytaloWebSovellus.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Huone,ValaisinTyyppi,LampunId,ValonTilaId,ValonMaara,PaivaMaara")] TalonValot talonValot)
+        public ActionResult Edit([Bind(Include = "Huone,ValaisinTyyppi,ValonTilaId,ValonMaara,PaivaMaara,LampunId")] TalonValot talonValot)
         {
             if (ModelState.IsValid)
             {
@@ -90,13 +90,13 @@ namespace AlytaloWebSovellus.Controllers
         }
 
         // GET: TalonValots/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TalonValot talonValot = db.TalonValots.Find(id);
+            TalonValot talonValot = db.TalonValot.Find(id);
             if (talonValot == null)
             {
                 return HttpNotFound();
@@ -107,10 +107,10 @@ namespace AlytaloWebSovellus.Controllers
         // POST: TalonValots/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int id)
         {
-            TalonValot talonValot = db.TalonValots.Find(id);
-            db.TalonValots.Remove(talonValot);
+            TalonValot talonValot = db.TalonValot.Find(id);
+            db.TalonValot.Remove(talonValot);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

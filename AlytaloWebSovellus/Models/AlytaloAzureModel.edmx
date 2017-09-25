@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="JuhaDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TalonLammot">
+          <Key>
+            <PropertyRef Name="HuoneId" />
+          </Key>
+          <Property Name="HuoneId" Type="int" Nullable="false" />
+          <Property Name="Huone" Type="nvarchar" MaxLength="50" />
+          <Property Name="TavoiteLampoTila" Type="int" Nullable="false" />
+          <Property Name="TalonNykyLampoTila" Type="int" Nullable="false" />
+          <Property Name="PaivaMaara" Type="date" />
+        </EntityType>
+        <EntityType Name="TalonSaunat">
+          <Key>
+            <PropertyRef Name="SaunaId" />
+          </Key>
+          <Property Name="SaunaId" Type="int" Nullable="false" />
+          <Property Name="SaunaTavoiteLampoTila" Type="int" Nullable="false" />
+          <Property Name="SaunaNykyLampoTila" Type="int" Nullable="false" />
+          <Property Name="SaunanNimi" Type="nvarchar" MaxLength="50" />
+          <Property Name="PaivaMaara" Type="date" />
+          <Property Name="SaunanTila" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="TalonValot">
+          <Key>
+            <PropertyRef Name="LampunId" />
+          </Key>
+          <Property Name="Huone" Type="nvarchar" MaxLength="50" />
+          <Property Name="ValaisinTyyppi" Type="nvarchar" MaxLength="50" />
+          <Property Name="ValonTilaId" Type="int" Nullable="false" />
+          <Property Name="ValonMaara" Type="nvarchar" MaxLength="50" />
+          <Property Name="PaivaMaara" Type="date" />
+          <Property Name="LampunId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="JuhaDBModelStoreContainer">
+          <EntitySet Name="TalonLammot" EntityType="Self.TalonLammot" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TalonSaunat" EntityType="Self.TalonSaunat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TalonValot" EntityType="Self.TalonValot" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="JuhaDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TalonLammot">
+          <Key>
+            <PropertyRef Name="HuoneId" />
+          </Key>
+          <Property Name="HuoneId" Type="Int32" Nullable="false" />
+          <Property Name="Huone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TavoiteLampoTila" Type="Int32" Nullable="false" />
+          <Property Name="TalonNykyLampoTila" Type="Int32" Nullable="false" />
+          <Property Name="PaivaMaara" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="TalonSaunat">
+          <Key>
+            <PropertyRef Name="SaunaId" />
+          </Key>
+          <Property Name="SaunaId" Type="Int32" Nullable="false" />
+          <Property Name="SaunaTavoiteLampoTila" Type="Int32" Nullable="false" />
+          <Property Name="SaunaNykyLampoTila" Type="Int32" Nullable="false" />
+          <Property Name="SaunanNimi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PaivaMaara" Type="DateTime" Precision="0" />
+          <Property Name="SaunanTila" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TalonValot">
+          <Key>
+            <PropertyRef Name="LampunId" />
+          </Key>
+          <Property Name="Huone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ValaisinTyyppi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ValonTilaId" Type="Int32" Nullable="false" />
+          <Property Name="ValonMaara" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PaivaMaara" Type="DateTime" Precision="0" />
+          <Property Name="LampunId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="JuhaDBEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TalonLammot" EntityType="Self.TalonLammot" />
+          <EntitySet Name="TalonSaunat" EntityType="Self.TalonSaunat" />
+          <EntitySet Name="TalonValot" EntityType="Self.TalonValot" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="JuhaDBModelStoreContainer" CdmEntityContainer="JuhaDBEntities1">
+          <EntitySetMapping Name="TalonLammot">
+            <EntityTypeMapping TypeName="JuhaDBModel.TalonLammot">
+              <MappingFragment StoreEntitySet="TalonLammot">
+                <ScalarProperty Name="HuoneId" ColumnName="HuoneId" />
+                <ScalarProperty Name="Huone" ColumnName="Huone" />
+                <ScalarProperty Name="TavoiteLampoTila" ColumnName="TavoiteLampoTila" />
+                <ScalarProperty Name="TalonNykyLampoTila" ColumnName="TalonNykyLampoTila" />
+                <ScalarProperty Name="PaivaMaara" ColumnName="PaivaMaara" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TalonSaunat">
+            <EntityTypeMapping TypeName="JuhaDBModel.TalonSaunat">
+              <MappingFragment StoreEntitySet="TalonSaunat">
+                <ScalarProperty Name="SaunaId" ColumnName="SaunaId" />
+                <ScalarProperty Name="SaunaTavoiteLampoTila" ColumnName="SaunaTavoiteLampoTila" />
+                <ScalarProperty Name="SaunaNykyLampoTila" ColumnName="SaunaNykyLampoTila" />
+                <ScalarProperty Name="SaunanNimi" ColumnName="SaunanNimi" />
+                <ScalarProperty Name="PaivaMaara" ColumnName="PaivaMaara" />
+                <ScalarProperty Name="SaunanTila" ColumnName="SaunanTila" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TalonValot">
+            <EntityTypeMapping TypeName="JuhaDBModel.TalonValot">
+              <MappingFragment StoreEntitySet="TalonValot">
+                <ScalarProperty Name="Huone" ColumnName="Huone" />
+                <ScalarProperty Name="ValaisinTyyppi" ColumnName="ValaisinTyyppi" />
+                <ScalarProperty Name="ValonTilaId" ColumnName="ValonTilaId" />
+                <ScalarProperty Name="ValonMaara" ColumnName="ValonMaara" />
+                <ScalarProperty Name="PaivaMaara" ColumnName="PaivaMaara" />
+                <ScalarProperty Name="LampunId" ColumnName="LampunId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

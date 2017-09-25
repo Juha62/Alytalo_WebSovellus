@@ -1,4 +1,4 @@
-﻿@model IEnumerable<AlytaloWebSovellus.TalonSaunat>
+﻿@model IEnumerable<AlytaloWebSovellus.Models.TalonSaunat>
 
 @{
     ViewBag.Title = "Index";
@@ -12,13 +12,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.SaunaTavoiteLampotila)
+            @Html.DisplayNameFor(model => model.SaunaId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SaunaNykyLampotila)
+            @Html.DisplayNameFor(model => model.SaunaTavoiteLampoTila)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SaunanTila)
+            @Html.DisplayNameFor(model => model.SaunaNykyLampoTila)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.SaunanNimi)
@@ -26,25 +26,31 @@
         <th>
             @Html.DisplayNameFor(model => model.PaivaMaara)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SaunanTila)
+        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.SaunaTavoiteLampotila)
+            @Html.DisplayFor(modelItem => item.SaunaId)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.SaunaNykyLampotila)
+            @Html.DisplayFor(modelItem => item.SaunaTavoiteLampoTila)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.SaunanTila)
+            @Html.DisplayFor(modelItem => item.SaunaNykyLampoTila)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.SaunanNimi)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.PaivaMaara)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SaunanTila)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.SaunaId }) |

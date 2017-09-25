@@ -1,4 +1,4 @@
-﻿@model AlytaloWebSovellus.TalonSaunat
+﻿@model AlytaloWebSovellus.Models.TalonSaunat
 
 @{
     ViewBag.Title = "Edit";
@@ -18,26 +18,18 @@
         @Html.HiddenFor(model => model.SaunaId)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.SaunaTavoiteLampotila, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.SaunaTavoiteLampoTila, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.SaunaTavoiteLampotila, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.SaunaTavoiteLampotila, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.SaunaTavoiteLampoTila, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SaunaTavoiteLampoTila, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.SaunaNykyLampotila, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.SaunaNykyLampoTila, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.SaunaNykyLampotila, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.SaunaNykyLampotila, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.SaunanTila, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.SaunanTila, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.SaunanTila, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.SaunaNykyLampoTila, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SaunaNykyLampoTila, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -54,6 +46,14 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.PaivaMaara, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.PaivaMaara, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SaunanTila, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SaunanTila, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SaunanTila, "", new { @class = "text-danger" })
             </div>
         </div>
 

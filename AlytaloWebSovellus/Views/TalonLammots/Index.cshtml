@@ -1,4 +1,4 @@
-﻿@model IEnumerable<AlytaloWebSovellus.TalonLammot>
+﻿@model IEnumerable<AlytaloWebSovellus.Models.TalonLammot>
 
 @{
     ViewBag.Title = "Index";
@@ -12,13 +12,16 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.HuoneId)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Huone)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TavoiteLampotila)
+            @Html.DisplayNameFor(model => model.TavoiteLampoTila)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TalonNykyLampotila)
+            @Html.DisplayNameFor(model => model.TalonNykyLampoTila)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.PaivaMaara)
@@ -29,13 +32,16 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.HuoneId)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Huone)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TavoiteLampotila)
+            @Html.DisplayFor(modelItem => item.TavoiteLampoTila)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TalonNykyLampotila)
+            @Html.DisplayFor(modelItem => item.TalonNykyLampoTila)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.PaivaMaara)

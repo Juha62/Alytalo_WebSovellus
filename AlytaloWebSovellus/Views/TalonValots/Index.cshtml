@@ -1,4 +1,4 @@
-﻿@model IEnumerable<AlytaloWebSovellus.TalonValot>
+﻿@model IEnumerable<AlytaloWebSovellus.Models.TalonValot>
 
 @{
     ViewBag.Title = "Index";
@@ -21,6 +21,9 @@
             @Html.DisplayNameFor(model => model.LampunId)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.ValonTilaId)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.ValonMaara)
         </th>
         <th>
@@ -41,15 +44,18 @@
             @Html.DisplayFor(modelItem => item.LampunId)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.ValonTilaId)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.ValonMaara)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.PaivaMaara)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ValonTilaId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ValonTilaId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ValonTilaId })
+            @Html.ActionLink("Edit", "Edit", new { id=item.LampunId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.LampunId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.LampunId })
         </td>
     </tr>
 }

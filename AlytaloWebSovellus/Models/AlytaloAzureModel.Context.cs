@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AlytaloWebSovellus
+namespace AlytaloWebSovellus.Models
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AlytaloEntities : DbContext
+    public partial class JuhaDBEntities1 : DbContext
     {
-        public AlytaloEntities()
-            : base("name=AlytaloEntities")
+        public JuhaDBEntities1()
+            : base("name=JuhaDBEntities1")
         {
         }
     
@@ -25,8 +25,8 @@ namespace AlytaloWebSovellus
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<TalonLammot> TalonLammots { get; set; }
-        public virtual DbSet<TalonValot> TalonValots { get; set; }
-        public virtual DbSet<TalonSaunat> TalonSaunats { get; set; }
+        public virtual DbSet<TalonLammot> TalonLammot { get; set; }
+        public virtual DbSet<TalonSaunat> TalonSaunat { get; set; }
+        public virtual DbSet<TalonValot> TalonValot { get; set; }
     }
 }

@@ -7,18 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AlytaloWebSovellus
+namespace AlytaloWebSovellus.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class TalonSaunat
+    public partial class TalonValot
     {
-        public int SaunaId { get; set; }
-        public string SaunaTavoiteLampotila { get; set; }
-        public string SaunaNykyLampotila { get; set; }
-        public string SaunanNimi { get; set; }
-        public System.DateTime PaivaMaara { get; set; }
-        public string SaunanTila { get; set; }
+        public string Huone { get; set; }
+        public string ValaisinTyyppi { get; set; }
+        public int ValonTilaId { get; set; }
+        public string ValonMaara { get; set; }
+        public Nullable<System.DateTime> PaivaMaara { get; set; }
+        public int LampunId { get; set; }
     }
 }

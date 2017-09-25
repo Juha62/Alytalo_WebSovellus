@@ -164,21 +164,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlytaloWebSovellusModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AlytaloWebSovellusModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AlytaloWebSovellusModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AlytaloWebSovellusModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AlytaloWebSovellusModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AlytaloWebSovellusModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -194,45 +179,60 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AlytaloAzureModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AlytaloAzureModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AlytaloAzureModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AlytaloAzureModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AlytaloAzureModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AlytaloAzureModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\TalonLammot.cs">
+      <DependentUpon>AlytaloAzureModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TalonSaunat.cs">
+      <DependentUpon>AlytaloAzureModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TalonValot.cs">
+      <DependentUpon>AlytaloAzureModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="TalonLammot.cs">
-      <DependentUpon>AlytaloWebSovellusModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TalonSaunat.cs">
-      <DependentUpon>AlytaloWebSovellusModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TalonValot.cs">
-      <DependentUpon>AlytaloWebSovellusModel.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AlytaloWebSovellusModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AlytaloWebSovellusModel.edmx</DependentUpon>
-      <LastGenOutput>AlytaloWebSovellusModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="AlytaloWebSovellusModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AlytaloWebSovellusModel.edmx</DependentUpon>
-      <LastGenOutput>AlytaloWebSovellusModel.cs</LastGenOutput>
-    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\AlytaloAzureModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AlytaloAzureModel.edmx</DependentUpon>
+      <LastGenOutput>AlytaloAzureModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\AlytaloAzureModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AlytaloAzureModel.edmx</DependentUpon>
+      <LastGenOutput>AlytaloAzureModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="AlytaloWebSovellusModel.edmx">
+    <EntityDeploy Include="Models\AlytaloAzureModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AlytaloWebSovellusModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>AlytaloAzureModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="AlytaloWebSovellusModel.edmx.diagram">
-      <DependentUpon>AlytaloWebSovellusModel.edmx</DependentUpon>
+    <Content Include="Models\AlytaloAzureModel.edmx.diagram">
+      <DependentUpon>AlytaloAzureModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
